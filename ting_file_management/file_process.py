@@ -1,10 +1,22 @@
+import sys
+
+
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
+    "Não há implementação"
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if not len(instance):
+        return print('Não há elementos')
+
+    else:
+        file = instance.dequeue()
+        print(f"Arquivo {file['arquivo']} removido com sucesso")
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        search = instance.search(position)
+        return search
+    except IndexError:
+        sys.stderr.write('Posição inválida\n')
